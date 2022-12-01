@@ -1,6 +1,9 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Author {
+public class Author implements Serializable {
+    static final long serialVersionUID = 1L;
+
     private String name;
     private String email;
     private char gender;
@@ -39,12 +42,17 @@ public class Author {
         return gender;
     }
 
+    public int getYear() {
+        return year;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
 
     @Override
     public String toString() {
-        return name + "(" + gender + ") at " + email;
+        return name + "(" + gender + ") at " + email +
+                " [" + year + "]";
     }
 }
